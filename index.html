@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Rangga IT Portfolio | Developer & Cybersecurity Enthusiast</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0c10;
+      color: #eef2ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* custom scroll */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1e2a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 20px;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 12, 16, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+      transition: all 0.3s;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3b82f6, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5e6;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: rgba(59,130,246,0.2);
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #60a5fa;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(59,130,246,0.4);
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .highlight {
+      color: #3b82f6;
+      border-bottom: 3px solid #3b82f6;
+      display: inline-block;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      max-width: 550px;
+      margin-bottom: 2rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #3b82f6;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -5px #3b82f680;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #3b82f6;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #3b82f6;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: #3b82f610;
+      transform: translateY(-2px);
+    }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .code-card {
+      background: #11131f;
+      border-radius: 2rem;
+      padding: 1.5rem;
+      border: 1px solid #2d3348;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
+      max-width: 380px;
+      width: 100%;
+    }
+    .code-card pre {
+      color: #a5f3c3;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+    }
+
+    /* section umum */
+    section {
+      padding: 6rem 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-title span {
+      color: #3b82f6;
+    }
+
+    /* skills */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .skill-card {
+      background: #11131f;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      text-align: center;
+      width: 150px;
+      transition: 0.2s;
+      border: 1px solid #262c3f;
+    }
+    .skill-card i {
+      font-size: 3rem;
+      color: #3b82f6;
+      margin-bottom: 0.8rem;
+    }
+    .skill-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: #3b82f6;
+    }
+
+    /* project cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .project-item {
+      background: #11131f;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: 0.25s;
+      border: 1px solid #262c3f;
+    }
+    .project-img {
+      background: #1e243b;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #3b82f6;
+    }
+    .project-info {
+      padding: 1.5rem;
+    }
+    .project-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-tags {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+    .tag {
+      background: #1f2a48;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+    .project-info p {
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+    .project-link {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* experience & education timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .timeline-item {
+      background: #11131f;
+      border-left: 4px solid #3b82f6;
+      padding: 1.2rem 2rem;
+      border-radius: 1rem;
+    }
+    .timeline-item h3 {
+      font-size: 1.3rem;
+    }
+    .timeline-date {
+      color: #60a5fa;
+      font-size: 0.85rem;
+      margin: 0.3rem 0 0.5rem;
+    }
+
+    /* contact */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: center;
+    }
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+    }
+    .contact-info i {
+      width: 40px;
+      color: #3b82f6;
+      font-size: 1.4rem;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-form {
+      flex: 1;
+      background: #11131f;
+      padding: 2rem;
+      border-radius: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      background: #0a0c10;
+      border: 1px solid #2d3348;
+      padding: 0.8rem 1rem;
+      border-radius: 1rem;
+      color: white;
+      font-family: inherit;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button[type="submit"] {
+      background: #3b82f6;
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 2rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #1e243b;
+      color: #6c7a91;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: #0f1119f0;
+        backdrop-filter: blur(20px);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        transition: 0.3s;
+        gap: 1.8rem;
+      }
+      .nav-links.active {
+        left: 0;
+      }
+      .hamburger {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+    @media (max-width: 650px) {
+      .hero-grid {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">&lt;RanggaDev/&gt;</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a href="#experience">Perjalanan</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-terminal"></i> IT Specialist & Developer
+          </div>
+          <h1>Membangun Solusi <span class="highlight">Digital</span> <br>dengan Kode & Keamanan</h1>
+          <p class="hero-desc">Halo, saya Rangga — seorang Fullstack Developer & Cybersecurity enthusiast. Saya membantu bisnis mengubah ide menjadi produk digital yang scalable dan aman.</p>
+          <div class="btn-group">
+            <a href="#projects" class="btn-primary">Lihat Proyek <i class="fas fa-arrow-right"></i></a>
+            <a href="#contact" class="btn-outline">Hubungi Saya</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="code-card">
+            <pre>
+<span style="color:#3b82f6">>_ portfolio.js</span>
+
+const rangga = {
+  role: "IT Engineer",
+  skills: ["React", "Node.js", "Python", "Cloud", "Security"],
+  mission: "build robust & secure systems"
+};
+
+<span style="color:#a5f3c3">console.log(</span><span style="color:#fbbf24">"ready to collaborate →"</span><span style="color:#a5f3c3">);</span>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">⚡ <span>Tech Toolkit</span> & Keahlian</div>
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fab fa-react"></i><h3>React.js</h3></div>
+          <div class="skill-card"><i class="fab fa-node-js"></i><h3>Node.js</h3></div>
+          <div class="skill-card"><i class="fab fa-python"></i><h3>Python</h3></div>
+          <div class="skill-card"><i class="fas fa-database"></i><h3>MongoDB/PostgreSQL</h3></div>
+          <div class="skill-card"><i class="fab fa-docker"></i><h3>Docker</h3></div>
+          <div class="skill-card"><i class="fas fa-cloud"></i><h3>AWS/GCP</h3></div>
+          <div class="skill-card"><i class="fas fa-shield-alt"></i><h3>Cyber Security</h3></div>
+          <div class="skill-card"><i class="fab fa-git-alt"></i><h3>Git & CI/CD</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">📌 <span>Proyek Unggulan</span></div>
+        <div class="projects-grid">
+          <div class="project-item">
+            <div class="project-img"><i class="fas fa-shield-hogwarts"></i></div>
+            <div class="project-info">
+              <h3>SecureAuth Gateway</h3>
+              <div class="project-tags"><span class="tag">OAuth2</span><span class="tag">JWT</span><span class="tag">Express</span></div>
+              <p>Layanan autentikasi terpusat dengan MFA & session management, digunakan oleh 3 startup lokal.</p>
+              <a href="#" class="project-link">Demo <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-img"><i class="fas fa-chart-line"></i></div>
+            <div class="project-info">
+              <h3>InsightOps Dashboard</h3>
+              <div class="project-tags"><span class="tag">React</span><span class="tag">D3.js</span><span class="tag">FastAPI</span></div>
+              <p>Platform analitik real-time untuk monitoring infrastruktur IT dan log security.</p>
+              <a href="#" class="project-link">Case study <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-img"><i class="fas fa-network-wired"></i></div>
+            <div class="project-info">
+              <h3>DevOps Pipeline Kit</h3>
+              <div class="project-tags"><span class="tag">Jenkins</span><span class="tag">Terraform</span><span class="tag">K8s</span></div>
+              <p>Template infrastructure as code untuk deployment aplikasi yang scalable dan aman.</p>
+              <a href="#" class="project-link">Repository <i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">📜 <span>Perjalanan & Edukasi</span></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>🔹 Senior IT Consultant - NexaByte Solutions</h3>
+            <div class="timeline-date">2023 - Sekarang</div>
+            <p>Mengembangkan arsitektur microservices untuk klien enterprise, meningkatkan efisiensi 40% dan menerapkan standar keamanan OWASP.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>🔹 Fullstack Developer (Remote) - TechInAsia</h3>
+            <div class="timeline-date">2021 - 2023</div>
+            <p>Membangun platform manajemen proyek internal dengan React, Node.js dan PostgreSQL. Mengintegrasikan sistem monitoring error.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>🎓 S.Kom - Universitas Teknologi Digital</h3>
+            <div class="timeline-date">2017 - 2021</div>
+            <p>Jurusan Teknik Informatika, fokus pada jaringan komputer & keamanan siber. Lulus dengan predikat cumlaude.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>📜 Sertifikasi: CompTIA Security+ | AWS Certified Developer</h3>
+            <div class="timeline-date">2022</div>
+            <p>Kredensial internasional yang membuktikan kemampuan di bidang cloud dan keamanan informasi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">📬 <span>Hubungi Saya</span></div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-detail"><i class="fas fa-envelope"></i> <span>rangga.it@portfolio.dev</span></div>
+            <div class="contact-detail"><i class="fab fa-github"></i> <span>/rangga-devsec</span></div>
+            <div class="contact-detail"><i class="fab fa-linkedin"></i> <span>linkedin.com/in/rangga-it</span></div>
+            <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span>Jakarta, Indonesia / Remote</span></div>
+            <div style="margin-top: 2rem;">
+              <p style="color:#9ca3af;">Tersedia untuk kolaborasi, freelance, atau diskusi teknis. Kirim pesan dan saya akan membalas dalam 24 jam.</p>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group"><input type="text" placeholder="Nama Lengkap" id="name" required></div>
+              <div class="form-group"><input type="email" placeholder="Email Aktif" id="email" required></div>
+              <div class="form-group"><textarea rows="4" placeholder="Tulis pesan Anda ..." id="message"></textarea></div>
+              <button type="submit" id="submitBtn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+              <p id="formFeedback" style="margin-top: 12px; font-size:0.85rem; text-align:center;"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Rangga IT Portfolio | Dibangun dengan <i class="fas fa-heart" style="color:#3b82f6;"></i> dan kode yang aman</p>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    // close menu when clicking on link (smooth scroll)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        navLinks.classList.remove('active');
+        const targetId = link.getAttribute('href');
+        if(targetId && targetId !== '#') {
+          e.preventDefault();
+          const targetSection = document.querySelector(targetId);
+          if(targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+    // form submit simulation + sweet simple feedback
+    const contactForm = document.getElementById('contactForm');
+    const feedbackPara = document.getElementById('formFeedback');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message) {
+        feedbackPara.innerHTML = '<span style="color:#f97316;">⚠️ Semua field harus diisi!</span>';
+        return;
+      }
+      if(!email.includes('@') || !email.includes('.')) {
+        feedbackPara.innerHTML = '<span style="color:#f97316;">📧 Email tidak valid.</span>';
+        return;
+      }
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Mengirim... <i class="fas fa-spinner fa-pulse"></i>';
+      // simulate async send
+      setTimeout(() => {
+        feedbackPara.innerHTML = '<span style="color:#4ade80;">✅ Pesan terkirim! Terima kasih, saya akan segera menghubungi Anda.</span>';
+        contactForm.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Kirim Pesan <i class="fas fa-paper-plane"></i>';
+        setTimeout(() => {
+          feedbackPara.innerHTML = '';
+        }, 5000);
+      }, 1000);
+    });
+    // active navbar highlight based on scroll
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if(scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navItems.forEach(link => {
+        link.style.color = '#cbd5e6';
+        if(link.getAttribute('href') === `#${current}`) {
+          link.style.color = '#3b82f6';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
